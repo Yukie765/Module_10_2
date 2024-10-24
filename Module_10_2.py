@@ -16,7 +16,12 @@ class Knight(Thread):
             sleep(1)
             self.time_tick += 1
             self.enemy_count = self.enemy_count - self.power
-            print(f'{self.name} сражается {self.time_tick} день(дня), осталось {self.enemy_count} воинов.')
+            if self.enemy_count > 0:
+                print(f'{self.name} сражается {self.time_tick} день(дня), осталось {self.enemy_count} воинов.')
+            else:
+                self.enemy_count = 0
+                print(f'{self.name} сражается {self.time_tick} день(дня), осталось {self.enemy_count} воинов.')
+
         print(f'{self.name}, одержал победу спустя {self.time_tick} дней(дня)!')
 
 first_knight = Knight('Sir Lancelot', 10)
