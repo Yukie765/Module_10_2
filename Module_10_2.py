@@ -12,7 +12,7 @@ class Knight(Thread):
 
     def run(self):
         print(f"{self.name}, на нас напали!")
-        while self.enemy_count!=0:
+        while self.enemy_count > 0:
             sleep(1)
             self.time_tick += 1
             self.enemy_count = self.enemy_count - self.power
